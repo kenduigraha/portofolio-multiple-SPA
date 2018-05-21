@@ -1,3 +1,4 @@
+import md5 from 'md5';
 import * as types from '../constants';
 
 const marvelBaseEndPoint = process.env.REACT_APP_API_MARVEL_BASE_END_POINT;
@@ -34,13 +35,14 @@ let loadMarvelCharsFailure = () => {
     }
 }
 
-
+ 
 let loadMarvelChars = () => {
-    marvelEndPointGetCharacters += `?apikey=${marvelPublicKey}&ts=${timeStamp}&hash=${md5(timeStamp + marvelPrivateKey + marvelPublicKey)}`
+    const marvelEndPointGetCharactersWithQuery = marvelEndPointGetCharacters +
+    `?apikey=${marvelPublicKey}&ts=${timeStamp}&hash=${md5(timeStamp + marvelPrivateKey + marvelPublicKey)}`
 
     return dispatch => {
         dispatch(loadStateMarvelChars());
-        return fetch(marvelEndPointGetCharacters)
+        return fetch(marvelEndPointGetCharactersWithQuery)
                 .then(results => {
                     console.log(results);
                     if (results.status !== 200 ) {
