@@ -44,7 +44,6 @@ let loadMarvelChars = () => {
         dispatch(loadStateMarvelChars());
         return fetch(marvelEndPointGetCharactersWithQuery)
                 .then(results => {
-                    console.log(results);
                     if (results.status !== 200 ) {
                     console.log('Upsss');
                     throw Error(`HTTP Status Code is  ${results.status}`);
@@ -53,8 +52,8 @@ let loadMarvelChars = () => {
                 })
                 .then(data => {
                     if (data.code !== 200) throw Error(`Response Code Data is not 200 !`);
-                    const dataChars = data.data.results;
-                    console.log(dataChars);
+                    // const dataChars = data.data.results;
+                    // console.log(dataChars);
                     dispatch(loadMarvelCharsSuccess(data));
                 })
                 .catch(err => {

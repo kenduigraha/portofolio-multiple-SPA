@@ -8,16 +8,14 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    // }
   }
 
   componentDidMount() {
-    console.log(this.props);
-    console.log(this.props.actions.loadMarvelChars());
+    this.props.actions.loadMarvelChars();
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
@@ -35,7 +33,7 @@ class App extends Component {
 // export default App;
 let mapStateToProps = (state) => {
   return {
-    state: state.reducersGetMarvelChars
+    getMarvelChars: state.reducersGetMarvelChars
   }
 }
 

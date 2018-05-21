@@ -3,13 +3,10 @@ import ReduxLogger from 'redux-logger';
 import ReduxThunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
+const enhancer = compose(applyMiddleware(ReduxThunk, ReduxLogger));
+const store = createStore(
+    rootReducer,
+    enhancer
+);
 
-export default () => {
-    const logger = ReduxLogger;
-    const enhancer = compose(applyMiddleware(ReduxThunk, logger));
-    const store = createStore(
-        rootReducer,
-        enhancer
-    );
-    return store;
-};
+export default () => store;
