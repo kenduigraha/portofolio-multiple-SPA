@@ -12,12 +12,13 @@ class CharactersComponent extends Component {
   constructor(props) {
     super(props);
     this.state={
-      // loading: true,
+      limit: 8,
+      offset: 0,
     }
   }
 
   componentWillMount() {
-    this.props.actions.loadMarvelChars();
+    this.props.actions.loadMarvelChars(this.state.limit, this.state.offset);
     
   }
 
