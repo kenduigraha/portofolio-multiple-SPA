@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import HeaderLayout from '../Layout/Header';
 import '../App.css';
+import '../Layout/Header/header.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -14,9 +16,7 @@ export default class App extends Component {
     console.log(this.props);
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Header</h1>
-        </header>
+        <HeaderLayout />
         <p className="App-intro">
           Credit Page
         </p>
