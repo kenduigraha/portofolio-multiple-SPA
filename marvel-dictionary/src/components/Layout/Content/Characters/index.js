@@ -20,12 +20,23 @@ class CharactersComponent extends Component {
     this.handleChangeDataLimit = this.handleChangeDataLimit.bind(this);
   }
 
+  fetchDataMarvelChars = (limit, offset) => {
+    this.props.actions.loadMarvelChars(limit, offset);
+  }
+
   componentWillMount() {
-    this.props.actions.loadMarvelChars(this.state.limit, this.state.offset);
+    this.fetchDataMarvelChars(this.state.limit, this.state.offset);
   }
 
   componentWillReceiveProps(nextProps) {
     document.addEventListener("scroll", this.trackScrolling);
+  }
+  
+  componentWillUpdate(nextProps, nextState) {
+    if (this.state.limit !== nextState.limit) {
+      this.props.actions.updateFlagInfinityMarvelChars(true);
+      this.fetchDataMarvelChars(nextState.limit, this.state.offset);
+    }
   }
 
   isBottom(el) {
@@ -40,19 +51,12 @@ class CharactersComponent extends Component {
         this.setState({
           limit: this.state.limit + 4
         });
-        this.props.actions.loadMarvelChars(this.state.limit, this.state.offset);
+        this.fetchDataMarvelChars(this.state.limit, this.state.offset);
       }
     }
   };
 
-  componentWillUpdate(nextProps, nextState) {
-    if (this.state.limit !== nextState.limit) {
-      this.props.actions.loadMarvelChars(nextState.limit, this.state.offset);
-    }
-  }
-
   handleChangeDataLimit(newLimit) {
-    console.log(newLimit)
     this.setState({ limit: Number(newLimit) });
   }
 
