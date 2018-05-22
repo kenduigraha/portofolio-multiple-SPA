@@ -4,7 +4,9 @@ import {
     LOAD_CHARACTERS_MARVEL_FAILURE
 } from '../constants';
 
-const initialState = [];
+const initialState = {
+    loading: true,
+};
 
 export default (state = initialState, action) => {
     switch(action.type) {
@@ -12,7 +14,10 @@ export default (state = initialState, action) => {
             return state;
         
         case LOAD_CHARACTERS_MARVEL_SUCCESS:
-            return action.payload;
+            return {
+                loading: false,
+                payload: action.payload,
+            };
 
         case LOAD_CHARACTERS_MARVEL_FAILURE:
         default:
