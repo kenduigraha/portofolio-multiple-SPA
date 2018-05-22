@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { Card, Col, Row, Icon, Avatar } from "antd";
+import { Row } from "antd";
 import * as AppActions from "../../../../actions";
 import CharactersCard from "./Cards";
 import FilterCharactersComponent from "./Filter";
 import CharactersLoading from "./Loading";
-const { Meta } = Card;
 
 class CharactersComponent extends Component {
   constructor(props) {

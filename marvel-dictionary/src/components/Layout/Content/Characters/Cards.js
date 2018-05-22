@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { Layout, Menu } from 'antd';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Col, Row, Icon, Avatar } from 'antd';
+import { Card, Col, Avatar } from 'antd';
 const { Meta } = Card;
 
 const CharactersCard = (props) => {

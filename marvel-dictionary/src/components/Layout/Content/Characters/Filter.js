@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Radio } from 'antd';
+import { Radio } from 'antd';
 import SortingCharacters from './Sorting';
 
 export default class FilterCharactersComponent extends Component {

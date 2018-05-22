@@ -9,10 +9,6 @@ import FooterLayout from '../../Footer';
 import '../../../App.css';
 
 class DetailCharacter extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         const { params } = this.props.match;
         const characterId = params.id;

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Layout, Avatar } from 'antd';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Layout } from 'antd';
 import CharactersLoading from '../Characters/Loading';
 const { Content } = Layout;
 

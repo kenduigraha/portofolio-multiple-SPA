@@ -17,7 +17,7 @@ const HeaderLayout = (props) => {
                     style={{ lineHeight: '64px', float: 'right' }}
                 >
                     <Menu.Item key="1">
-                        <Link to="credit">
+                        <Link to="/credit">
                             Credit
                         </Link>
                     </Menu.Item>

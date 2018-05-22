@@ -10,12 +10,6 @@ const marvelPrivateKey = process.env.REACT_APP_API_MARVEL_PRIVATE_KEY;
 const date =  new Date();
 const timeStamp = date.getTime();
 
-const paramsValueGetChars = {
-    apikey: marvelPublicKey,
-    ts: timeStamp,
-    hash: md5(timeStamp + marvelPrivateKey + marvelPublicKey),
-};
-
 let loadStateMarvelChars = () => {
     return {
         type: types.LOAD_CHARACTERS_MARVEL,

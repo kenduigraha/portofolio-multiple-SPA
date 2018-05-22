@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { Carousel, Input } from 'antd';
-const Search = Input.Search;
-
+import React from 'react';
+import { Carousel } from 'antd';
 const dataImg = [1, 2, 3, 4, 5];
 
 const CarouselComponent = (props) => {
