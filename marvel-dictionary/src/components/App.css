@@ -66,3 +66,17 @@
   font-weight: bold;
   text-align: center;
 }
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  /* height: 160px; */
+  height: 600px;
+  width: 100%;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}

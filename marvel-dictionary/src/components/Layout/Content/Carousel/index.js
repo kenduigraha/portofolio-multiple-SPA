@@ -6,10 +6,38 @@ const CarouselComponent = (props) => {
     return (
         <Carousel>
             <div>
-                <Search
-                    placeholder="input search text"
-                    onSearch={value => console.log(value)}
-                    style={{ width: 200 }}
+                <img
+                    src="/images/carousel-1.jpg"
+                    style={{ width: '100%', margin: 'auto', height: 'auto' }}
+                    alt="marvel #1"
+                />
+            </div>
+            <div>
+                <img
+                    src="/images/carousel-2.jpg"
+                    style={{ width: '100%', margin: 'auto', height: 'auto' }}
+                    alt="marvel #2"
+                />
+            </div>
+            <div>
+                <img
+                    src="/images/carousel-3.jpg"
+                    style={{ width: '100%', margin: 'auto', height: 'auto' }}
+                    alt="marvel #3"
+                />
+            </div>
+            <div>
+                <img
+                    src="/images/carousel-4.jpg"
+                    style={{ width: '100%', margin: 'auto', height: 'auto' }}
+                    alt="marvel #4"
+                />
+            </div>
+            <div>
+                <img
+                    src="/images/carousel-5.jpg"
+                    style={{ width: '100%', margin: 'auto', height: 'auto' }}
+                    alt="marvel #5"
                 />
             </div>
         </Carousel>
