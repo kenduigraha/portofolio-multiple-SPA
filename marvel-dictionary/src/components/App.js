@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import * as AppActions from '../actions';
+import HeaderLayout from './Layout/Header';
 import logo from './logo.svg';
 import './App.css';
+import './Layout/Header/header.css';
 
 class App extends Component {
   constructor(props) {
@@ -12,21 +14,22 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.actions.loadMarvelChars();
+    // this.props.actions.loadMarvelChars();
   }
 
   render() {
     console.log(this.props);
     return (
       <div className="App">
-        <header className="App-header">
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">
             <Link to="/credit">
               Go to Credit page
             </Link>
           </h1>
-        </header>
+        </header> */}
+        <HeaderLayout />
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
