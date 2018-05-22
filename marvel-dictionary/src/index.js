@@ -21,6 +21,11 @@ const Credit = Loadable({
     loading: Loading,
 });
 
+const DetailCharacter = Loadable({
+    loader: () => import('./components/Layout/Content/DetailCharacter'),
+    loading: Loading,
+});
+
 
 ReactDOM.render(
     <Provider store={ store }>
@@ -28,6 +33,9 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/credit" component={Credit}/>
+                <Route path="/character/:id" component={DetailCharacter}/>
+                {/* TODO:  404 page */}
+                <Route component={App} /> 
             </Switch>
         </Router>
     </Provider>,

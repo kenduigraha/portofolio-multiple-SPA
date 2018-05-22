@@ -50,3 +50,19 @@
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
+
+.detail--logo-character {
+  border-style: solid;
+  border-width: 10px;
+  border-color: #330b0b;
+  margin-left: -30px;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+}
+
+.detail--title-character {
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+}

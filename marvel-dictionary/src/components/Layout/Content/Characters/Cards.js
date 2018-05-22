@@ -9,18 +9,20 @@ const CharactersCard = (props) => {
         <Col
             span={6} xxl={6} xl={6} lg={8} md={12} sm={24} xs={24}
             style={{ marginBottom: '20px'}}>
-            <Card
-               loading={props.loading}
-                cover={<img alt={props.data.name}
-                width='323'
-                height='323'
-                src={`${props.data.thumbnail.path}.${props.data.thumbnail.extension}`} />}
-            >
-                <Meta
-                    avatar={<Avatar src={`${props.data.thumbnail.path}.${props.data.thumbnail.extension}`} />}
-                    title={props.data.name}
-                />
-            </Card>
+            <Link to={`/character/${props.data.id}`}>
+                <Card
+                loading={props.loading}
+                    cover={<img alt={props.data.name}
+                    width='323'
+                    height='323'
+                    src={`${props.data.thumbnail.path}.${props.data.thumbnail.extension}`} />}
+                >
+                    <Meta
+                        avatar={<Avatar src={`${props.data.thumbnail.path}.${props.data.thumbnail.extension}`} />}
+                        title={props.data.name}
+                    />
+                </Card>
+            </Link>
         </Col>
     )
 }
