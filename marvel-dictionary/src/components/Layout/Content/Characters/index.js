@@ -39,7 +39,7 @@ class CharactersComponent extends Component {
                 }
               </Row>
               <div>
-                {this.props.getMarvelChars.payload.attributionText}
+                {this.props.getMarvelChars.payload.copyright}
               </div>
             </div>
           }
