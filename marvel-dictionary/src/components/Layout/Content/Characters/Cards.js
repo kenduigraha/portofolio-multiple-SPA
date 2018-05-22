@@ -5,10 +5,9 @@ import { Card, Col, Row, Icon, Avatar } from 'antd';
 const { Meta } = Card;
 
 const CharactersCard = (props) => {
-    console.log(props);
     return (
         <Col
-            span={8} xxl={8} xl={8} lg={8} md={12} sm={24} xs={24}
+            span={6} xxl={6} xl={6} lg={8} md={12} sm={24} xs={24}
             style={{ marginBottom: '20px'}}>
             <Card
                 cover={<img alt={props.data.name}
