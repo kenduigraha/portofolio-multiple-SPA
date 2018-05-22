@@ -61,11 +61,11 @@ class CharactersComponent extends Component {
               {this.props.getMarvelChars.payload.data.results.map(char => {
                 return <CharactersCard key={char.id} data={char} />;
               })}
+            </Row>
               {
                 this.props.getMarvelChars.infinity === true &&
                 <CharactersLoading />
               }
-            </Row>
             <div>{this.props.getMarvelChars.payload.copyright}</div>
           </div>
         )}
