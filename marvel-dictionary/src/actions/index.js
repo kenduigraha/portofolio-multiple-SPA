@@ -36,9 +36,9 @@ let loadMarvelCharsFailure = () => {
 }
 
  
-let loadMarvelChars = () => {
+let loadMarvelChars = (limit, offset) => {
     const marvelEndPointGetCharactersWithQuery = marvelEndPointGetCharacters +
-    `?apikey=${marvelPublicKey}&ts=${timeStamp}&hash=${md5(timeStamp + marvelPrivateKey + marvelPublicKey)}`
+    `?apikey=${marvelPublicKey}&ts=${timeStamp}&hash=${md5(timeStamp + marvelPrivateKey + marvelPublicKey)}&limit=${limit}&offset=${offset}`
 
     return dispatch => {
         dispatch(loadStateMarvelChars());
@@ -64,4 +64,13 @@ let loadMarvelChars = () => {
     }
 }
 
-export { loadMarvelChars };
+let updateFlagInfinityMarvelChars = (bool) => {
+    return {
+        type: types.UPDATE_FLAG_INFINITY_CHARACTERS_MARVEL,
+        payload: {
+            data: bool,
+        }
+    }
+}
+
+export { loadMarvelChars, updateFlagInfinityMarvelChars };
