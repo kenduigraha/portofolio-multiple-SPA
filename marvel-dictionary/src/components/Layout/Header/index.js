@@ -7,7 +7,7 @@ const { Header } = Layout;
 const HeaderLayout = (props) => {
     return (
         <Layout>
-            <Header style={{ width: '100%' }}>
+            <Header style={{ position: 'fixed', zIndex: '100', width: '100%' }}>
                 <Link to="/">
                     <div className="logo" />
                 </Link>
