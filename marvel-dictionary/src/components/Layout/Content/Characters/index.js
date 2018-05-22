@@ -16,6 +16,8 @@ class CharactersComponent extends Component {
       limit: 8,
       offset: 0
     };
+
+    this.handleChangeDataLimit = this.handleChangeDataLimit.bind(this);
   }
 
   componentWillMount() {
@@ -43,6 +45,17 @@ class CharactersComponent extends Component {
     }
   };
 
+  componentWillUpdate(nextProps, nextState) {
+    if (this.state.limit !== nextState.limit) {
+      this.props.actions.loadMarvelChars(nextState.limit, this.state.offset);
+    }
+  }
+
+  handleChangeDataLimit(newLimit) {
+    console.log(newLimit)
+    this.setState({ limit: Number(newLimit) });
+  }
+
   render() {
     return (
       <div id="content" style={{ background: "#ECECEC", padding: "30px" }}>
@@ -56,7 +69,10 @@ class CharactersComponent extends Component {
                 __html: this.props.getMarvelChars.payload.attributionHTML
               }}
             />
-            <FilterCharactersComponent />
+            <FilterCharactersComponent
+              limit={this.state.limit}
+              changeDataLimit={this.handleChangeDataLimit}
+            />
             <Row gutter={24}>
               {this.props.getMarvelChars.payload.data.results.map(char => {
                 return <CharactersCard key={char.id} data={char} />;
