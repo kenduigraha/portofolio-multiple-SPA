@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
+import CarouselComponent from './Carousel';
+import CharactersComponent from './Characters';
 const { Content } = Layout;
-
 
 const ContentLayout = (props) => {
     return (
-        <Content style={{ padding: '0 50px', backgroundColor: 'yellow' }}>
-            <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>Content</div>
+        <Content style={{ background: '#e23636', minHeight: 500, marginTop: '64px' }}>
+            <CarouselComponent />
+            <CharactersComponent />
         </Content>
     )
 }
