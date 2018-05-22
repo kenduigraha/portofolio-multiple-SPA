@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import * as AppActions from '../actions';
 import HeaderLayout from './Layout/Header';
 import ContentLayout from './Layout/Content';
-// import FooterLayout from './Layout/Footer';
+import FooterLayout from './Layout/Footer';
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,17 +22,9 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">
-            <Link to="/credit">
-              Go to Credit page
-            </Link>
-          </h1>
-        </header> */}
         <HeaderLayout />
         <ContentLayout />
-        {/* <FooterLayout /> */}
+        <FooterLayout />
       </div>
     );
   }
