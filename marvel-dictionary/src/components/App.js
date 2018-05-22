@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as AppActions from '../actions';
 import HeaderLayout from './Layout/Header';
-import FooterLayout from './Layout/Footer';
+import ContentLayout from './Layout/Content';
+// import FooterLayout from './Layout/Footer';
 import logo from './logo.svg';
 import './App.css';
 
@@ -30,6 +31,8 @@ class App extends Component {
           </h1>
         </header> */}
         <HeaderLayout />
+        <ContentLayout />
+        {/* <FooterLayout /> */}
       </div>
     );
   }
