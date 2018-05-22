@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import HeaderLayout from '../Layout/Header';
 import '../App.css';
-import '../Layout/Header/header.css';
 
 export default class App extends Component {
   constructor(props) {

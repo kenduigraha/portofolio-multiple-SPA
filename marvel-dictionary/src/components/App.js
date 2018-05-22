@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as AppActions from '../actions';
 import HeaderLayout from './Layout/Header';
+import FooterLayout from './Layout/Footer';
 import logo from './logo.svg';
 import './App.css';
-import './Layout/Header/header.css';
 
 class App extends Component {
   constructor(props) {
@@ -30,9 +30,6 @@ class App extends Component {
           </h1>
         </header> */}
         <HeaderLayout />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
