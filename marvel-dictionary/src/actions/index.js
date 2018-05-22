@@ -36,9 +36,9 @@ let loadMarvelCharsFailure = () => {
 }
 
  
-let loadMarvelChars = (limit, offset) => {
+let loadMarvelChars = (limit, offset, orderBy) => {
     const marvelEndPointGetCharactersWithQuery = marvelEndPointGetCharacters +
-    `?apikey=${marvelPublicKey}&ts=${timeStamp}&hash=${md5(timeStamp + marvelPrivateKey + marvelPublicKey)}&limit=${limit}&offset=${offset}`
+    `?apikey=${marvelPublicKey}&ts=${timeStamp}&hash=${md5(timeStamp + marvelPrivateKey + marvelPublicKey)}&limit=${limit}&offset=${offset}&orderBy=${orderBy}`;
 
     return dispatch => {
         dispatch(loadStateMarvelChars());
