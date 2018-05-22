@@ -21,12 +21,6 @@ const HeaderLayout = (props) => {
                             Credit
                         </Link>
                     </Menu.Item>
-                    <Menu.Item key="2">
-                        <Link to="sign-in">
-                            Sign In
-                        </Link>
-                    </Menu.Item>
-                    
                 </Menu>
             </Header>
         </Layout>

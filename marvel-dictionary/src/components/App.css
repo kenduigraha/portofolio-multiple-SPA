@@ -30,7 +30,7 @@
 }
 
 .logo {
-  background-image: url('http://localhost:3000/images/Marvel-comics-logo-vector.png');
+  background-image: url('/images/Marvel-comics-logo-vector.png');
   background-repeat: no-repeat;
   background-size:contain;
   width: 124px;
