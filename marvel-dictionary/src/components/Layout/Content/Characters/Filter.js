@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Radio } from 'antd';
+import SortingCharacters from './Sorting';
 
 export default class FilterCharactersComponent extends Component {
     constructor(props) {
@@ -8,6 +9,7 @@ export default class FilterCharactersComponent extends Component {
             dataLimit: ['4', '8', '16', '32'],
             radioButtonValue: this.props.limit.toString(),
         };
+        this.handleChangeSort = this.handleChangeSort.bind(this);
     }
 
     handleClickButton(e) {
@@ -17,6 +19,11 @@ export default class FilterCharactersComponent extends Component {
             this.props.changeDataLimit(value);
         }
     }
+
+    handleChangeSort(orderBy) {
+        this.props.changeDataSort(orderBy);
+    }
+    
     render() {
         const value = this.state.radioButtonValue;
         return(
@@ -36,8 +43,9 @@ export default class FilterCharactersComponent extends Component {
                         })
                     }
                 </Radio.Group>
-                <Button style={{float: 'right'}}>Sort</Button>
-                <Button style={{float: 'right'}}>Filter</Button>
+                <SortingCharacters
+                    changeOrderBySort={this.handleChangeSort}
+                />
             </div>
         );
     }

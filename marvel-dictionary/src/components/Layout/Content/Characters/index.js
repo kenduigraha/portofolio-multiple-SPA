@@ -14,28 +14,38 @@ class CharactersComponent extends Component {
     super(props);
     this.state = {
       limit: 8,
-      offset: 0
+      offset: 0,
+      orderBy: 'name',
+      cardLoading: false,
     };
 
     this.handleChangeDataLimit = this.handleChangeDataLimit.bind(this);
+    this.handleChangeDataSort = this.handleChangeDataSort.bind(this);
   }
 
-  fetchDataMarvelChars = (limit, offset) => {
-    this.props.actions.loadMarvelChars(limit, offset);
+  fetchDataMarvelChars = (limit, offset, orderBy) => {
+    this.props.actions.loadMarvelChars(limit, offset, orderBy);
   }
 
   componentWillMount() {
-    this.fetchDataMarvelChars(this.state.limit, this.state.offset);
+    this.fetchDataMarvelChars(this.state.limit, this.state.offset, this.state.orderBy);
   }
 
   componentWillReceiveProps(nextProps) {
     document.addEventListener("scroll", this.trackScrolling);
+    if (nextProps.getMarvelChars.infinity === false) {
+      this.setState({ cardLoading: !this.state.cardLoading, });
+    }
   }
   
   componentWillUpdate(nextProps, nextState) {
     if (this.state.limit !== nextState.limit) {
       this.props.actions.updateFlagInfinityMarvelChars(true);
-      this.fetchDataMarvelChars(nextState.limit, this.state.offset);
+      this.fetchDataMarvelChars(nextState.limit, this.state.offset, this.state.orderBy);
+    }
+    if (this.state.orderBy !== nextState.orderBy) {
+      this.props.actions.updateFlagInfinityMarvelChars(true);
+      this.fetchDataMarvelChars(this.state.limit, this.state.offset, nextState.orderBy);
     }
   }
 
@@ -51,13 +61,17 @@ class CharactersComponent extends Component {
         this.setState({
           limit: this.state.limit + 4
         });
-        this.fetchDataMarvelChars(this.state.limit, this.state.offset);
+        this.fetchDataMarvelChars(this.state.limit, this.state.offset, this.state.orderBy);
       }
     }
   };
 
   handleChangeDataLimit(newLimit) {
     this.setState({ limit: Number(newLimit) });
+  }
+
+  handleChangeDataSort(orderBy) {
+    this.setState({ orderBy: orderBy, cardLoading: true, });
   }
 
   render() {
@@ -76,10 +90,11 @@ class CharactersComponent extends Component {
             <FilterCharactersComponent
               limit={this.state.limit}
               changeDataLimit={this.handleChangeDataLimit}
+              changeDataSort={this.handleChangeDataSort}
             />
             <Row gutter={24}>
               {this.props.getMarvelChars.payload.data.results.map(char => {
-                return <CharactersCard key={char.id} data={char} />;
+                return <CharactersCard loading={this.state.cardLoading} key={char.id} data={char} />;
               })}
             </Row>
               {
