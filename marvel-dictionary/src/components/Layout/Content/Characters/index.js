@@ -34,12 +34,16 @@ class CharactersComponent extends Component {
   componentWillReceiveProps(nextProps) {
     document.addEventListener("scroll", this.trackScrolling);
     if (nextProps.getMarvelChars.infinity === false) {
-      this.setState({ cardLoading: !this.state.cardLoading, });
+      this.setState({ cardLoading: false, });
     }
   }
   
   componentWillUpdate(nextProps, nextState) {
-    if (this.state.limit !== nextState.limit) {
+    if (
+      !this.props.getMarvelChars.loading &&
+      !this.props.getMarvelChars.infinity &&
+      this.state.limit !== nextState.limit
+    ) {
       this.props.actions.updateFlagInfinityMarvelChars(true);
       this.fetchDataMarvelChars(nextState.limit, this.state.offset, this.state.orderBy);
     }
@@ -50,7 +54,8 @@ class CharactersComponent extends Component {
   }
 
   isBottom(el) {
-    return el.getBoundingClientRect().bottom <= window.innerHeight;
+    if (el) return el.getBoundingClientRect().bottom <= window.innerHeight;
+    return false;
   }
 
   trackScrolling = () => {
