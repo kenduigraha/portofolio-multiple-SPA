@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Layout, Menu } from 'antd';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Layout } from 'antd';
 import CarouselComponent from './Carousel';
 import CharactersComponent from './Characters';
 const { Content } = Layout;

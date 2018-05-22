@@ -30,7 +30,7 @@
 }
 
 .logo {
-  background-image: url('http://localhost:3000/images/Marvel-comics-logo-vector.png');
+  background-image: url('/images/Marvel-comics-logo-vector.png');
   background-repeat: no-repeat;
   background-size:contain;
   width: 124px;
@@ -42,6 +42,36 @@
 .ant-carousel .slick-slide {
   text-align: center;
   height: 500px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.detail--logo-character {
+  border-style: solid;
+  border-width: 10px;
+  border-color: #330b0b;
+  margin-left: -30px;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+}
+
+.detail--title-character {
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  /* height: 160px; */
+  height: 600px;
+  width: 100%;
   line-height: 160px;
   background: #364d79;
   overflow: hidden;

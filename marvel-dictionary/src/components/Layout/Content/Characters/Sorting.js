@@ -37,7 +37,7 @@ export default class SortingCharacters extends Component {
                     onVisibleChange={this.handleVisibleChange}
                     visible={this.state.visible}
                 >
-                    <a className="ant-dropdown-link" href="javascript:void(0)">
+                    <a className="ant-dropdown-link">
                     Sort <Icon type="down" />
                     </a>
                 </Dropdown>
