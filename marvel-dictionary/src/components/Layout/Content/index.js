@@ -7,7 +7,7 @@ const { Content } = Layout;
 
 const ContentLayout = (props) => {
     return (
-        <Content style={{ background: '#e23636', minHeight: 500 }}>
+        <Content style={{ background: '#e23636', minHeight: 500, marginTop: '64px' }}>
             <CarouselComponent />
             <CharactersComponent />
         </Content>
